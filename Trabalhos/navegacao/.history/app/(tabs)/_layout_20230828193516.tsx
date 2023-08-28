@@ -37,7 +37,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="media"
+        name="Média"
         options={{
           title: 'Calculo de média de 2 valores',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,

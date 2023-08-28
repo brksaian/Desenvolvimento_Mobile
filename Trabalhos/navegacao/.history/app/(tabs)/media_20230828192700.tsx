@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { TextInput, Button, StyleSheet } from "react-native";
-
-import { Text, View } from '../../components/Themed';
+import { Text, TextInput, View, Button, StyleSheet } from "react-native";
 
 export default function Form() {
   const [media_1, setMedia_1] = useState("");
@@ -32,8 +30,6 @@ export default function Form() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Média</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Text>Media 1</Text>
       <TextInput
         value={media_1}
         keyboardType="numeric"

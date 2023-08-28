@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { Text, TextInput, View, Button } from "react-native";
 
-import ResultImc from "../result";
-
 export default function Form() {
-  const [media_1, setMedia_1] = useState(null);
-  const [media_2, setMedia_2] = useState(null);
-  const [mediaFinal, setMediaFinal] = useState(null);
+  const [media_1, setMedia_1] = useState("");
+  const [media_2, setMedia_2] = useState("");
+  const [mediaFinal, setMediaFinal] = useState("");
 
   function mediaFinalCalculator() {
-    let m1 = parseFloat(media_1);
-    let m2 = parseFloat(media_2);
-    let mf = (m1 + m2) / 2;
-    setMediaFinal(mf);
+    let m1: number = parseFloat(media_1);
+    let m2: number = parseFloat(media_2);
+    let mf: number = (m1 + m2) / 2;
+    setMediaFinal(mf.toFixed(2).toString());
   }
 
   function validationMediaFinal() {
@@ -20,13 +18,13 @@ export default function Form() {
       mediaFinalCalculator();
       resetInput();
     } else {
-      setMediaFinal(null);
+      setMediaFinal("");
     }
   }
 
   function resetInput() {
-    setMedia_1(null);
-    setMedia_2(null);
+    setMedia_1("");
+    setMedia_2("");
   }
 
   return (
@@ -49,7 +47,9 @@ export default function Form() {
         title="Calcular Media Final"
         onPress={() => validationMediaFinal()}
       />
-      <ResultImc mediaFinal={mediaFinal} />
+      <Text style={{ fontSize: 20, fontWeight: "bold", textAlign: "center" }}>
+        {mediaFinal}
+      </Text>
     </View>
   );
 }

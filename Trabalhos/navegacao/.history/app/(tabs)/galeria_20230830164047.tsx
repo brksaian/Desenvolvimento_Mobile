@@ -32,7 +32,6 @@ export default function Galeria() {
       if (image !== "") {
         try {
           Image.getSize(image, (width, height) => {
-            alert(`Largura: ${width} - Altura: ${height}`);
             setImageDimensions({ width, height, link: image });
           });
         } catch (error) {

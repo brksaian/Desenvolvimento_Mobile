@@ -8,6 +8,7 @@ import {
   ScrollView,
 } from "react-native";
 import axios from "axios";
+import uuid from "react-native-uuid";
 
 const TMDB_API_KEY = "b191f429c8484b0dcbd6a51fa35463f6";
 const TMDB_API_URL = "https://api.themoviedb.org/3/movie/popular";
@@ -40,7 +41,7 @@ const Api: React.FC = () => {
           <View style={styles.movieContainer}>
             <Image
               style={styles.poster}
-              key={item.poster_path}
+              key={uuid.v4().toString()}
               source={{
                 uri: `https://image.tmdb.org/t/p/w200${item.poster_path}`,
               }}

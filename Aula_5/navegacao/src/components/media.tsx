@@ -1,9 +1,16 @@
 import React, { useState } from "react";
-import { TextInput, Button, StyleSheet } from "react-native";
+import {
+  TextInput,
+  Image,
+  Button,
+  StyleSheet,
+  ScrollView,
+  Dimensions,
+  Text,
+  View,
+} from "react-native";
 
-import { Text, View } from "../../components/Themed";
-
-export default function Form() {
+export default function Meida() {
   const [media_1, setMedia_1] = useState("");
   const [media_2, setMedia_2] = useState("");
   const [mediaFinal, setMediaFinal] = useState("");
@@ -32,18 +39,13 @@ export default function Form() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Média</Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
+      <View style={styles.separator} />
       <Text>Media 1</Text>
       <TextInput
         value={media_1}
         keyboardType="numeric"
         placeholder="Insira a primeira media"
         onChangeText={setMedia_1}
-        style={styles.input}
       />
       <Text>Media 2</Text>
       <TextInput
@@ -51,7 +53,6 @@ export default function Form() {
         keyboardType="numeric"
         placeholder="Insira a segunda media"
         onChangeText={setMedia_2}
-        style={styles.input}
       />
       <Button
         title="Calcular Media Final"
@@ -78,11 +79,5 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: "80%",
-  },
-  input: {
-    color: "#fff",
-    textAlign: "center",
-    borderColor: "#fff",
-    borderWidth: 1,
   },
 });
